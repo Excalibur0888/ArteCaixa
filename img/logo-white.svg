@@ -1,0 +1,5 @@
+<svg width="150" height="40" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 8L32 14V26L20 32L8 26V14L20 8Z" stroke="white" stroke-width="2"/>
+    <path d="M20 2L36 10V30L20 38L4 30V10L20 2Z" stroke="white" stroke-width="2"/>
+    <text x="45" y="26" font-family="Arial" font-weight="bold" font-size="20" fill="white">ArteCaixa</text>
+</svg> 

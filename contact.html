@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - ArteCaixa | Caixas Decorativas Artesanais</title>
+    <meta
+      name="description"
+      content="Entre em contato conosco para solicitar orçamentos, tirar dúvidas ou fazer encomendas de caixas decorativas artesanais."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__contact">
+            <a href="tel:+5511938471763">
+              <img src="img/phone.svg" alt="" width="16" height="16" />
+              +55 11 93847-1763
+            </a>
+            <a href="mailto:artecaixa@gmail.com">
+              <img src="img/email.svg" alt="" width="16" height="16" />
+              artecaixa@gmail.com
+            </a>
+          </div>
+          <div class="header__location">
+            <img src="img/location.svg" alt="" width="16" height="16" />
+						<a href="https://maps.app.goo.gl/5tzUusp45C2kCi3v7" target="_blank">R. Augusta - Consolação, São Paulo - SP, 01309-040, Brazil</a>
+          </div>
+        </div>
+      </div>
+      <div class="header__main">
+        <div class="container">
+          <a href="index.html" class="logo">
+            <img
+              src="img/logo.svg"
+              alt="ArteCaixa Logo"
+              width="150"
+              height="40"
+            />
+          </a>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li><a href="index.html" class="nav__link">Início</a></li>
+              <li><a href="products.html" class="nav__link">Produtos</a></li>
+              <li>
+                <a href="contact.html" class="nav__link nav__link--active"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <button class="burger" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="contact-hero">
+        <div class="container">
+          <h1>Entre em Contato</h1>
+          <p>
+            Estamos aqui para ajudar você a criar a caixa decorativa perfeita
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-info">
+        <div class="container">
+          <div class="contact-info__grid">
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <img src="img/phone-brown.svg" alt="" width="32" height="32" />
+              </div>
+              <h3>Telefone</h3>
+              <p>Atendimento de Segunda a Sábado</p>
+              <a href="tel:+5511938471763">+55 11 93847-1763</a>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <img src="img/email-brown.svg" alt="" width="32" height="32" />
+              </div>
+              <h3>E-mail</h3>
+              <p>Responderemos em até 24 horas</p>
+              <a href="mailto:artecaixa@gmail.com">artecaixa@gmail.com</a>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <img
+                  src="img/location-brown.svg"
+                  alt=""
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <h3>Endereço</h3>
+              <p>Visite nossa loja física</p>
+              <a
+                href="https://maps.app.goo.gl/5tzUusp45C2kCi3v7"
+                target="_blank"
+              >
+                R. Augusta - Consolação, São Paulo - SP, 01309-040, Brazil
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-form">
+        <div class="container">
+          <div class="contact-form__grid">
+            <div class="contact-form__content">
+              <h2>Solicite um Orçamento</h2>
+              <p>
+                Preencha o formulário abaixo e entraremos em contato o mais
+                breve possível.
+              </p>
+              <div class="contact-form__info">
+                <h3>Horário de Atendimento</h3>
+                <p>
+                  Segunda a Sexta: 9h às 18h<br />
+                  Sábado: 9h às 13h
+                </p>
+                <h3>Endereço</h3>
+                <address>
+                  <a
+                    href="https://maps.app.goo.gl/5tzUusp45C2kCi3v7"
+                    target="_blank"
+                  >
+                    R. Augusta - Consolação, São Paulo - SP, 01309-040, Brazil
+                  </a>
+                </address>
+              </div>
+            </div>
+            <form class="contact-form__form" action="#" method="POST">
+              <div class="form-group">
+                <label for="name">Nome Completo *</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefone *</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Assunto *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Selecione um assunto</option>
+                  <option value="orcamento">Solicitar Orçamento</option>
+                  <option value="duvida">Dúvida sobre Produtos</option>
+                  <option value="personalizado">Projeto Personalizado</option>
+                  <option value="outro">Outro Assunto</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Mensagem *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn--large">
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1074.0089733066256!2d-46.65628290708513!3d-23.553989552875027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce583364a4e5a7%3A0xc2c32f12461c30f6!2zUi4gQXVndXN0YSAtIENvbnNvbGHDp8OjbywgU8OjbyBQYXVsbyAtIFNQLCAwMTMwOS0wNDAsINCR0YDQsNC30LjQu9C40Y8!5e1!3m2!1sru!2sru!4v1737314977174!5m2!1sru!2sru"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="container">
+          <div class="footer__grid">
+            <div class="footer__about">
+              <a href="index.html" class="footer__logo">
+                <img
+                  src="img/logo-white.svg"
+                  alt="ArteCaixa Logo"
+                  width="150"
+                  height="40"
+                />
+              </a>
+              <p>
+                Criamos caixas decorativas artesanais únicas, combinando
+                tradição e inovação em cada peça.
+              </p>
+              <div class="footer__contact">
+                <a href="tel:+5511938471763">
+                  <img
+                    src="img/phone-white.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  +55 11 93847-1763
+                </a>
+                <a href="mailto:artecaixa@gmail.com">
+                  <img
+                    src="img/email-white.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  artecaixa@gmail.com
+                </a>
+              </div>
+            </div>
+            <div class="footer__nav">
+              <h4>Navegação</h4>
+              <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="products.html">Produtos</a></li>
+                <li><a href="contact.html">Contato</a></li>
+              </ul>
+            </div>
+            <div class="footer__products">
+              <h4>Produtos</h4>
+              <ul>
+                <li><a href="products.html#vintage">Coleção Vintage</a></li>
+                <li><a href="products.html#modern">Linha Moderna</a></li>
+                <li><a href="products.html#rustic">Série Rústica</a></li>
+                <li><a href="products.html#exclusive">Peças Exclusivas</a></li>
+              </ul>
+            </div>
+            <div class="footer__location">
+              <h4>Nossa Localização</h4>
+              <address>
+                <a
+                  href="https://maps.app.goo.gl/5tzUusp45C2kCi3v7"
+                  target="_blank"
+                >
+                  <img
+                    src="img/location-white.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  R. Augusta - Consolação, São Paulo - SP, 01309-040, Brazil
+                </a>
+              </address>
+              <div class="footer__hours">
+                <h4>Horário de Funcionamento</h4>
+                <p>
+                  Segunda a Sexta: 9h às 18h<br />
+                  Sábado: 9h às 13h
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__bottom-content">
+            <p>&copy; 2024 ArteCaixa. Todos os direitos reservados.</p>
+            <ul class="footer__links">
+              <li><a href="privacy-policy.html">Política de Privacidade</a></li>
+              <li><a href="terms-conditions.html">Termos e Condições</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="scroll-top">
+      <button class="scroll-top__btn" aria-label="Voltar ao topo">
+        <img src="img/arrow-up.svg" alt="" width="24" height="24" />
+      </button>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

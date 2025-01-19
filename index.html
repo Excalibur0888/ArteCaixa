@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArteCaixa - Caixas Decorativas Artesanais em São Paulo</title>
+    <meta name="description" content="Caixas decorativas artesanais únicas feitas à mão em São Paulo. Peças exclusivas para decoração e organização com design personalizado.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__contact">
+                    <a href="tel:+5511938471763">
+                        <img src="img/phone.svg" alt="" width="16" height="16">
+                        +55 11 93847-1763
+                    </a>
+                    <a href="mailto:artecaixa@gmail.com">
+                        <img src="img/email.svg" alt="" width="16" height="16">
+                        artecaixa@gmail.com
+                    </a>
+                </div>
+                <div class="header__location">
+                    <img src="img/location.svg" alt="" width="16" height="16">
+										<a href="https://maps.app.goo.gl/5tzUusp45C2kCi3v7" target="_blank">R. Augusta - Consolação, São Paulo - SP, 01309-040, Brazil</a>
+									</div>
+            </div>
+        </div>
+        <div class="header__main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="ArteCaixa Logo" width="150" height="40">
+                </a>
+                <button class="burger" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="index.html" class="nav__link nav__link--active">Início</a></li>
+                        <li><a href="products.html" class="nav__link">Produtos</a></li>
+                        <li><a href="contact.html" class="nav__link nav__link--special">Solicitar Orçamento</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__slider">
+                <div class="hero__slide active">
+                    <div class="container">
+                        <div class="hero__content">
+                            <h1>Caixas Decorativas Artesanais</h1>
+                            <p>Criamos peças únicas que combinam beleza e funcionalidade</p>
+                            <div class="hero__buttons">
+                                <a href="products.html" class="btn">Ver Produtos</a>
+                                <a href="contact.html" class="btn btn--outline">Contato</a>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/hero1.jpg" alt="Caixa decorativa artesanal" class="hero__bg">
+                </div>
+                <!-- Другие слайды будут добавляться динамически через JavaScript -->
+            </div>
+            <div class="hero__dots"></div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2>Nossas Coleções</h2>
+                <div class="categories__tabs">
+                    <div class="categories__nav">
+                        <button class="tab-btn active" data-tab="vintage">Vintage</button>
+                        <button class="tab-btn" data-tab="modern">Moderna</button>
+                        <button class="tab-btn" data-tab="rustic">Rústica</button>
+                        <button class="tab-btn" data-tab="exclusive">Exclusiva</button>
+                    </div>
+                    <div class="categories__content">
+                        <div class="tab-content active" id="vintage">
+                            <div class="category-card">
+                                <img src="img/vintage-collection.jpg" alt="Coleção Vintage">
+                                <div class="category-card__info">
+                                    <h3>Coleção Vintage</h3>
+                                    <p>Caixas decorativas com design clássico e acabamento envelhecido. Cada peça traz a elegância de épocas passadas para seu ambiente.</p>
+                                    <a href="products.html#vintage" class="btn btn--small">Ver Coleção</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="modern">
+                            <div class="category-card">
+                                <img src="img/modern-collection.jpg" alt="Coleção Moderna">
+                                <div class="category-card__info">
+                                    <h3>Coleção Moderna</h3>
+                                    <p>Design minimalista e materiais contemporâneos. A combinação perfeita de funcionalidade e estilo para ambientes modernos.</p>
+                                    <a href="products.html#modern" class="btn btn--small">Ver Coleção</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="rustic">
+                            <div class="category-card">
+                                <img src="img/rustic-collection.jpg" alt="Coleção Rústica">
+                                <div class="category-card__info">
+                                    <h3>Coleção Rústica</h3>
+                                    <p>Materiais naturais e texturas orgânicas. Caixas com estilo rústico que trazem o aconchego da natureza para sua casa.</p>
+                                    <a href="products.html#rustic" class="btn btn--small">Ver Coleção</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="exclusive">
+                            <div class="category-card">
+                                <img src="img/exclusive-collection.jpg" alt="Coleção Exclusiva">
+                                <div class="category-card__info">
+                                    <h3>Coleção Exclusiva</h3>
+                                    <p>Peças únicas feitas sob medida com materiais premium. Cada caixa é criada especialmente para você.</p>
+                                    <a href="products.html#exclusive" class="btn btn--small">Ver Coleção</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="features">
+            <div class="container">
+                <div class="features__grid">
+                    <div class="feature">
+                        <div class="feature__icon">
+                            <img src="img/handmade.svg" alt="Ícone artesanal" width="48" height="48">
+                        </div>
+                        <div class="feature__content">
+                            <h3>100% Artesanal</h3>
+                            <p>Cada peça é cuidadosamente feita à mão por nossos artesãos experientes</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon">
+                            <img src="img/unique.svg" alt="Ícone único" width="48" height="48">
+                        </div>
+                        <div class="feature__content">
+                            <h3>Peças Únicas</h3>
+                            <p>Designs exclusivos criados especialmente para cada cliente</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon">
+                            <img src="img/quality.svg" alt="Ícone qualidade" width="48" height="48">
+                        </div>
+                        <div class="feature__content">
+                            <h3>Alta Qualidade</h3>
+                            <p>Materiais selecionados e acabamento premium em cada detalhe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process">
+            <div class="container">
+                <h2>Como Trabalhamos</h2>
+                <div class="process__steps">
+                    <div class="step">
+                        <div class="step__number">01</div>
+                        <h3>Consulta</h3>
+                        <p>Conversamos sobre suas necessidades e preferências</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">02</div>
+                        <h3>Design</h3>
+                        <p>Criamos um design personalizado para sua aprovação</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">03</div>
+                        <h3>Produção</h3>
+                        <p>Fabricamos sua peça com atenção aos detalhes</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">04</div>
+                        <h3>Entrega</h3>
+                        <p>Entregamos sua peça única pronta para uso</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>O Que Dizem Nossos Clientes</h2>
+                <div class="testimonials__slider">
+                    <div class="testimonials__track">
+                        <div class="testimonial">
+                            <div class="testimonial__content">
+                                <p>"Encomendei uma caixa da coleção vintage e fiquei absolutamente encantada com a qualidade excepcional! O acabamento artesanal é impecável e cada detalhe foi cuidadosamente trabalhado. Superou todas as minhas expectativas e trouxe um toque especial para minha decoração. O atendimento personalizado também foi um diferencial."</p>
+                            </div>
+                            <div class="testimonial__author">
+                                <img src="img/client1.jpg" alt="Maria Silva">
+                                <div>
+                                    <h4>Maria Silva</h4>
+                                    <p>São Paulo, SP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial__content">
+                                <p>"Excelente trabalho em todos os aspectos! Encomendei um conjunto completo de caixas organizadoras e cada peça ficou perfeita. A funcionalidade aliada ao design elegante transformou completamente meu espaço. O processo de customização foi muito profissional e o resultado final superou minhas expectativas. Com certeza voltarei a comprar e já recomendei para vários amigos."</p>
+                            </div>
+                            <div class="testimonial__author">
+                                <img src="img/client2.jpg" alt="João Santos">
+                                <div>
+                                    <h4>João Santos</h4>
+                                    <p>Rio de Janeiro, RJ</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial__content">
+                                <p>"Trabalho verdadeiramente impecável! A caixa da coleção exclusiva que encomendei não é apenas um item de organização, mas uma verdadeira peça de arte. O design personalizado combinou perfeitamente com minha decoração e recebo elogios constantes dos visitantes. A qualidade dos materiais e o cuidado com os detalhes demonstram um verdadeiro compromisso com a excelência."</p>
+                            </div>
+                            <div class="testimonial__author">
+                                <img src="img/client3.jpg" alt="Ana Costa">
+                                <div>
+                                    <h4>Ana Costa</h4>
+                                    <p>Curitiba, PR</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials__arrows">
+                        <button class="arrow-btn arrow-btn--prev" aria-label="Anterior">
+                            <img src="img/arrow-left.svg" alt="">
+                        </button>
+                        <button class="arrow-btn arrow-btn--next" aria-label="Próximo">
+                            <img src="img/arrow-right.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline">
+            <div class="container">
+                <h2>Nossa História</h2>
+                <div class="timeline__content">
+                    <div class="timeline__item">
+                        <div class="timeline__date">2015</div>
+                        <div class="timeline__info">
+                            <h3>O Início</h3>
+                            <p>Começamos nossa jornada em uma pequena oficina em São Paulo, com o sonho de criar peças únicas e especiais.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__date">2017</div>
+                        <div class="timeline__info">
+                            <h3>Primeira Loja</h3>
+                            <p>Inauguramos nossa primeira loja física na Rua Augusta, trazendo nossas criações para mais perto dos clientes.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__date">2019</div>
+                        <div class="timeline__info">
+                            <h3>Expansão</h3>
+                            <p>Lançamos nossa loja online e começamos a atender clientes em todo o Brasil, expandindo nosso alcance.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__date">2021</div>
+                        <div class="timeline__info">
+                            <h3>Reconhecimento</h3>
+                            <p>Recebemos o prêmio de "Melhor Artesanato" da Associação Brasileira de Artesãos.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__date">2024</div>
+                        <div class="timeline__info">
+                            <h3>Inovação Contínua</h3>
+                            <p>Continuamos inovando com novas coleções e técnicas artesanais, mantendo nossa tradição de qualidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="container">
+                <h2>Galeria de Trabalhos</h2>
+                <p class="gallery__subtitle">Conheça alguns dos nossos trabalhos mais especiais</p>
+                <div class="gallery__grid">
+                    <div class="gallery__item">
+                        <img src="img/gallery1.jpg" alt="Caixa Vintage Floral">
+                        <div class="gallery__overlay">
+                            <h3>Caixa Vintage Floral</h3>
+                            <p>Coleção Primavera 2024</p>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="img/gallery2.jpg" alt="Conjunto Moderno">
+                        <div class="gallery__overlay">
+                            <h3>Conjunto Moderno</h3>
+                            <p>Design Minimalista</p>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="img/gallery3.jpg" alt="Caixa Rústica">
+                        <div class="gallery__overlay">
+                            <h3>Caixa Rústica</h3>
+                            <p>Acabamento Natural</p>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="img/gallery4.jpg" alt="Peça Exclusiva">
+                        <div class="gallery__overlay">
+                            <h3>Peça Exclusiva</h3>
+                            <p>Projeto Personalizado</p>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="img/gallery5.jpg" alt="Coleção Especial">
+                        <div class="gallery__overlay">
+                            <h3>Coleção Especial</h3>
+                            <p>Edição Limitada</p>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="img/gallery6.jpg" alt="Design Premium">
+                        <div class="gallery__overlay">
+                            <h3>Design Premium</h3>
+                            <p>Alta Qualidade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta__content">
+                    <h2>Pronto para Criar sua Caixa Personalizada?</h2>
+                    <p>Entre em contato conosco e comece a desenvolver sua peça única hoje mesmo</p>
+                    <a href="contact.html" class="btn btn--large">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__grid">
+                    <div class="footer__about">
+                        <a href="index.html" class="footer__logo">
+                            <img src="img/logo-white.svg" alt="ArteCaixa Logo" width="150" height="40">
+                        </a>
+                        <p>Criamos caixas decorativas artesanais únicas, combinando tradição e inovação em cada peça.</p>
+                        <div class="footer__contact">
+                            <a href="tel:+5511938471763">
+                                <img src="img/phone-white.svg" alt="" width="16" height="16">
+                                +55 11 93847-1763
+                            </a>
+                            <a href="mailto:artecaixa@gmail.com">
+                                <img src="img/email-white.svg" alt="" width="16" height="16">
+                                artecaixa@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__nav">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="products.html">Produtos</a></li>
+                            <li><a href="contact.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__products">
+                        <h4>Produtos</h4>
+                        <ul>
+                            <li><a href="products.html#vintage">Coleção Vintage</a></li>
+                            <li><a href="products.html#modern">Linha Moderna</a></li>
+                            <li><a href="products.html#rustic">Série Rústica</a></li>
+                            <li><a href="products.html#exclusive">Peças Exclusivas</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__location">
+                        <h4>Nossa Localização</h4>
+                        <address>
+                            <a href="https://maps.app.goo.gl/5tzUusp45C2kCi3v7" target="_blank">
+                                <img src="img/location-white.svg" alt="" width="16" height="16">
+                                R. Augusta - Consolação, São Paulo - SP, 01309-040, Brazil
+                            </a>
+                        </address>
+                        <div class="footer__hours">
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sexta: 9h às 18h<br>
+                            Sábado: 9h às 13h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-content">
+                    <p>&copy; 2024 ArteCaixa. Todos os direitos reservados.</p>
+                    <ul class="footer__links">
+                        <li><a href="privacy-policy.html">Política de Privacidade</a></li>
+                        <li><a href="terms-conditions.html">Termos e Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top">
+        <button class="scroll-top__btn" aria-label="Voltar ao topo">
+            <img src="img/arrow-up.svg" alt="" width="24" height="24">
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
