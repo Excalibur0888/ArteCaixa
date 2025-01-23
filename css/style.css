@@ -1178,6 +1178,35 @@ ul {
     margin-bottom: 20px;
 }
 
+.form-group--checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form-group--checkbox input[type="checkbox"] {
+    margin-top: 4px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.form-group--checkbox label {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+.form-group--checkbox a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.form-group--checkbox a:hover {
+    color: var(--color-primary-dark);
+}
+
 .form-group label {
     display: block;
     margin-bottom: 8px;
@@ -1551,7 +1580,7 @@ ul {
 @media (max-width: 768px) {
     .privacy,
     .terms {
-        padding: 2rem 0;
+        padding: 4rem 0;
     }
 
     .privacy h1,

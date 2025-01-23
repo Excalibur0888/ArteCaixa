@@ -51,71 +51,75 @@ const heroSlider = document.querySelector('.hero__slider');
 const heroDots = document.querySelector('.hero__dots');
 
 // Create slides and dots
-heroSlides.forEach((slide, index) => {
-    // Create slide
-    if (index > 0) { // First slide already exists in HTML
-        const slideEl = document.createElement('div');
-        slideEl.className = 'hero__slide';
-        slideEl.innerHTML = `
-            <div class="container">
-                <div class="hero__content">
-                    <h1>${slide.title}</h1>
-                    <p>${slide.description}</p>
-                    <div class="hero__buttons">
-                        <a href="products.html" class="btn">Ver Produtos</a>
-                        <a href="contact.html" class="btn btn--outline">Contato</a>
+if (heroSlider && heroDots) {
+    heroSlides.forEach((slide, index) => {
+        // Create slide
+        if (index > 0) { // First slide already exists in HTML
+            const slideEl = document.createElement('div');
+            slideEl.className = 'hero__slide';
+            slideEl.innerHTML = `
+                <div class="container">
+                    <div class="hero__content">
+                        <h1>${slide.title}</h1>
+                        <p>${slide.description}</p>
+                        <div class="hero__buttons">
+                            <a href="products.html" class="btn">Ver Produtos</a>
+                            <a href="contact.html" class="btn btn--outline">Contato</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <img src="${slide.image}" alt="" class="hero__bg">
-        `;
-        heroSlider.appendChild(slideEl);
-    }
+                <img src="${slide.image}" alt="Hero background image" class="hero__bg">
+            `;
+            heroSlider.appendChild(slideEl);
+        }
 
-    // Create dot
-    const dot = document.createElement('button');
-    dot.className = 'hero__dot';
-    dot.setAttribute('aria-label', `Slide ${index + 1}`);
-    if (index === 0) dot.classList.add('active');
-    heroDots.appendChild(dot);
-});
-
-// Hero slider functionality
-const slides = document.querySelectorAll('.hero__slide');
-const dots = document.querySelectorAll('.hero__dot');
-let currentSlide = 0;
-let slideInterval;
-
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-function startSlideshow() {
-    slideInterval = setInterval(nextSlide, 5000);
-}
-
-function stopSlideshow() {
-    clearInterval(slideInterval);
-}
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-        stopSlideshow();
-        startSlideshow();
+        // Create dot
+        const dot = document.createElement('button');
+        dot.className = 'hero__dot';
+        dot.setAttribute('aria-label', `Slide ${index + 1}`);
+        if (index === 0) dot.classList.add('active');
+        heroDots.appendChild(dot);
     });
-});
 
-startSlideshow();
+    // Hero slider functionality
+    const slides = document.querySelectorAll('.hero__slide');
+    const dots = document.querySelectorAll('.hero__dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    if (slides.length > 0 && dots.length > 0) {
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+                stopSlideshow();
+                startSlideshow();
+            });
+        });
+
+        startSlideshow();
+    }
+}
 
 // Tabs
 const tabBtns = document.querySelectorAll('.tab-btn');
@@ -169,21 +173,25 @@ function showTestimonial(index) {
     });
 }
 
-// Инициализация начального состояния
-testimonialSlides.forEach((slide, i) => {
-    slide.style.transform = `translateX(${i * 100}%)`;
-});
-showTestimonial(0);
+if (testimonialSlides.length > 0) {
+    // Инициализация начального состояния
+    testimonialSlides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${i * 100}%)`;
+    });
+    showTestimonial(0);
 
-prevBtn.addEventListener('click', () => {
-    currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
-    showTestimonial(currentTestimonial);
-});
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
+            showTestimonial(currentTestimonial);
+        });
 
-nextBtn.addEventListener('click', () => {
-    currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
-    showTestimonial(currentTestimonial);
-});
+        nextBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+            showTestimonial(currentTestimonial);
+        });
+    }
+}
 
 // Scroll to top button
 const scrollTopBtn = document.querySelector('.scroll-top__btn');
