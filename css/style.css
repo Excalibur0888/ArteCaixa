@@ -860,11 +860,10 @@ ul {
 
 /* Products Page */
 .products-hero {
-    padding: 60px 0 60px;
+    padding: 180px 0 60px;
     background-color: var(--color-primary);
     color: white;
     text-align: center;
-    margin-top: var(--header-height);
 }
 
 .products-hero h1 {
@@ -997,10 +996,6 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .products-hero {
-        padding: 80px 0 40px;
-    }
-
     .products-hero h1 {
         font-size: 36px;
     }
@@ -1047,11 +1042,10 @@ ul {
 
 /* Contact Page */
 .contact-hero {
-    padding: 120px 0 60px;
+    padding: 180px 0 60px;
     background-color: var(--color-primary);
     color: white;
     text-align: center;
-    margin-top: var(--header-height);
 }
 
 .contact-hero h1 {
@@ -1257,10 +1251,6 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .contact-hero {
-        padding: 80px 0 40px;
-    }
-
     .contact-hero h1 {
         font-size: 36px;
     }
@@ -2119,7 +2109,7 @@ ul {
 .join-team {
     padding: 80px 0;
     text-align: center;
-    background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.9)), url('../img/workshop-bg.jpg') center/cover;
+    background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.9));
     color: white;
 }
 
@@ -2319,7 +2309,7 @@ ul {
 /* Achievements Section */
 .achievements {
     padding: 80px 0;
-    background: linear-gradient(rgba(139, 69, 19, 0.95), rgba(139, 69, 19, 0.95)), url('../img/workshop-bg.jpg') center/cover;
+    background: linear-gradient(rgba(139, 69, 19, 0.95), rgba(139, 69, 19, 0.95));
     color: white;
 }
 
