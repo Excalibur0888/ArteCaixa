@@ -32,18 +32,18 @@ navLinks.forEach(link => {
 const heroSlides = [
     {
         image: 'img/hero1.jpg',
-        title: 'Caixas Decorativas Artesanais',
-        description: 'Criamos peças únicas que combinam beleza e funcionalidade'
+        title: 'Handcrafted Decorative Boxes',
+        description: 'We create unique pieces that combine beauty and functionality'
     },
     {
         image: 'img/hero2.jpg',
-        title: 'Design Exclusivo',
-        description: 'Cada peça é criada especialmente para você'
+        title: 'Exclusive Design',
+        description: 'Each piece is created especially for you'
     },
     {
         image: 'img/hero3.jpg',
-        title: 'Acabamento Premium',
-        description: 'Materiais selecionados e atenção aos detalhes'
+        title: 'Premium Finish',
+        description: 'Selected materials and attention to detail'
     }
 ];
 
@@ -208,5 +208,175 @@ scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
+    });
+});
+
+// Products filtering
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.products-nav__input');
+    const sortSelect = document.getElementById('sort');
+    const priceSelect = document.getElementById('price');
+    const productCards = document.querySelectorAll('.product-card');
+    const productsGrid = document.querySelector('.products-grid');
+    const productTags = document.querySelectorAll('.products-nav__tag');
+
+    let activeFilters = {
+        search: '',
+        sort: 'popular',
+        price: 'all',
+        tags: new Set()
+    };
+
+    // Search functionality
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            activeFilters.search = e.target.value.toLowerCase();
+            applyFilters();
+        });
+    }
+
+    // Sort functionality
+    if (sortSelect) {
+        sortSelect.addEventListener('change', function(e) {
+            activeFilters.sort = e.target.value;
+            applyFilters();
+        });
+    }
+
+    // Price range functionality
+    if (priceSelect) {
+        priceSelect.addEventListener('change', function(e) {
+            activeFilters.price = e.target.value;
+            applyFilters();
+        });
+    }
+
+    // Tags functionality
+    if (productTags) {
+        productTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                const tagText = this.textContent.toLowerCase();
+                if (activeFilters.tags.has(tagText)) {
+                    activeFilters.tags.delete(tagText);
+                    this.classList.remove('active');
+                } else {
+                    activeFilters.tags.add(tagText);
+                    this.classList.add('active');
+                }
+                applyFilters();
+            });
+        });
+    }
+
+    function applyFilters() {
+        if (!productCards) return;
+
+        productCards.forEach(card => {
+            let shouldShow = true;
+
+            // Search filter
+            if (activeFilters.search) {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                shouldShow = title.includes(activeFilters.search) || description.includes(activeFilters.search);
+            }
+
+            // Price filter
+            if (shouldShow && activeFilters.price !== 'all') {
+                const priceText = card.querySelector('.product-card__price').textContent;
+                const price = parseFloat(priceText.replace('$', ''));
+                
+                switch(activeFilters.price) {
+                    case '0-50':
+                        shouldShow = price <= 50;
+                        break;
+                    case '50-100':
+                        shouldShow = price > 50 && price <= 100;
+                        break;
+                    case '100+':
+                        shouldShow = price > 100;
+                        break;
+                }
+            }
+
+            // Tags filter
+            if (shouldShow && activeFilters.tags.size > 0) {
+                const badges = card.querySelectorAll('.badge');
+                const cardTags = Array.from(badges).map(badge => {
+                    return badge.textContent.toLowerCase();
+                });
+                shouldShow = Array.from(activeFilters.tags).some(tag => cardTags.includes(tag));
+            }
+
+            card.style.display = shouldShow ? '' : 'none';
+        });
+
+        // Sort products
+        if (productsGrid && activeFilters.sort !== 'popular') {
+            const cards = Array.from(productCards);
+            cards.sort((a, b) => {
+                const priceA = parseFloat(a.querySelector('.product-card__price').textContent.replace('$', ''));
+                const priceB = parseFloat(b.querySelector('.product-card__price').textContent.replace('$', ''));
+                
+                switch(activeFilters.sort) {
+                    case 'price-low':
+                        return priceA - priceB;
+                    case 'price-high':
+                        return priceB - priceA;
+                    case 'newest':
+                        return b.querySelector('.badge--new') ? 1 : -1;
+                    default:
+                        return 0;
+                }
+            });
+
+            cards.forEach(card => {
+                productsGrid.appendChild(card);
+            });
+        }
+    }
+
+    // Initial filter application
+    applyFilters();
+});
+
+// Анимация появления элементов при прокрутке
+document.addEventListener('DOMContentLoaded', () => {
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.value-card, .team-card, .about-intro__content, .about-intro__image');
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            
+            if (elementTop < window.innerHeight && elementBottom > 0) {
+                element.classList.add('animate');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Запускаем один раз при загрузке
+});
+
+// Плавное появление фотографий команды
+document.querySelectorAll('.team-card__image img').forEach(img => {
+    if (img.complete) {
+        img.classList.add('loaded');
+    } else {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+    }
+});
+
+// Интерактивные карточки ценностей
+document.querySelectorAll('.value-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.classList.add('active');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('active');
     });
 }); 
